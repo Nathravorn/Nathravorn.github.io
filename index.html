@@ -261,7 +261,64 @@
 							</div>
 						</div>
 						<div class="image" style="background-color: white;">
-							<img src="images/network_gradient_transparent.png" alt="" />
+							<img src="images/social_network.png" alt="" />
+						</div>
+					</section>
+
+					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in onscroll-content-fade-up" id="first">
+						<div class="content">
+							<h2></h2>
+							<p>
+								I built a <strong>real-time connected database (Knowledge
+								Graph)</strong> to track the adoption of technologies by top
+								companies. The information in this database was <strong>
+									extracted fully
+									automatically
+								</strong> from unstructured text data.
+							</p>								
+							<p>
+								Turning raw text into a living network allowed an unprecedented
+								level of <strong>big-picture analysis</strong> on the technology
+								landscape.
+							</p>
+							<p class="strong italic accent">
+								Knowledge Graphs | Information Extraction | Deep Syntax Analysis
+							</p>
+							<ul class="actions learn_more_wrapper">
+								<a class="button learn_more">Technical Details</a>
+							</ul>
+							<div class="hidden_text">
+								<p>
+									The aim of the project was to extract relationships between
+									companies and technologies based on transcripts of what
+									executives said in Earnings Calls. The three major technical
+									challenges were the <strong>high level of noise</strong> (the large majority of
+									technology mentions in the data are meaningless), the <strong>
+										lack of
+										labeled data
+									</strong> and a requirement of <strong>
+										interpretability and
+										robustness
+									</strong>.
+								</p>
+								<p>
+									The solution we found was to use an <strong>OpenIE</strong> model based on
+									<strong>dependency parsing</strong> to extract assertions and
+									only keep those which expressed an explicit relationship between
+									the company and the technology. Then, a classification model
+									(based on the <strong>
+										TARS model</strong>, trained using <strong>transfer learning with
+										weak supervision
+									</strong>) took those assertions and assigned them a
+									label to make the analysis easier.
+								</p>
+								<p class="strong italic accent">
+									Tools and Libraries: Flair | Spacy | Vis.js
+								</p>
+							</div>
+						</div>
+						<div class="image" style="background-color: white;">
+							<img src="images/kg.jpg" alt="" />
 						</div>
 					</section>
 
