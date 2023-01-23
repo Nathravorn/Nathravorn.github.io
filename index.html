@@ -208,8 +208,89 @@
 							<img src="images/gif/cropped.gif" alt="" />
 						</div>
 					</section>
-
+					
 					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in onscroll-content-fade-up">
+						<div class="content">
+							<h2>Detecting and Predicting Logistics Incidents</h2>
+							<p>
+								The client needed an incident detection system
+								that would have a <strong>0% false-negative rate</strong> -
+								meaning it knew when to call upon a human for
+								any ambiguous case. We were able to achieve this
+								thanks to a rigourous <strong>
+									data processing, data
+									quality control and monitoring pipeline.
+								</strong>
+							</p>								
+							<p>
+								We also used the client's historical data to
+								<strong>build predictive models</strong> and anticipate incidents
+								before they happen, allowing the client to
+								<strong>gain a competitive edge</strong> by having predictions
+								tailored to their sector.
+							</p>
+							<p class="strong italic accent">
+								Data Quality Control | Database Design | Machine Learning | Data Engineering
+							</p>
+							<ul class="actions learn_more_wrapper">
+								<a class="button learn_more">Technical Details</a>
+							</ul>
+							<div class="hidden_text">
+								<p>
+									To build a truly reliable system, we needed
+									to ensure the quality of the incoming data,
+									by developing a robust processing pipeline
+									for the data provided by the suppliers. This
+									processing chain was based on :
+								</p>
+								<ul>
+									<li>A data schema developed for the project (6 new tables were added to the database).</li>
+									<li>A Python library providing an abstraction layer to interact with the raw data.</li>
+									<li>
+										5 atomic workers developed in Python to
+										implement the different processing steps.
+										This separation of tasks was designed to
+										create loose coupling between the workers
+										and maximize desirable properties such as
+										involutivity and statelessness.
+									</li>
+								</ul>
+								<p>
+									For the predictive modeling aspect, we
+									created two datasets for training the models
+									and created hand-crafted features to extract
+									as much value as possible from the data. We
+									then selected the most relevant models based
+									on criteria of performance and
+									interpretability.
+								</p>
+								<p>
+									The pipeline was put into production by
+									exposing an API (FastAPI) to query the
+									predictive models, using an ORM (SQLAlchemy)
+									to interface with the database, and by
+									containerizing each of the workers using
+									Docker.
+								</p>
+								<p class="strong italic accent">
+									Tools and Libraries: Python | MySQL | Docker
+									| FastAPI | SQLAlchemy | Scikit-Learn |
+									Pandas | Numpy
+								</p>
+							</div>
+						</div>
+						<div class="image">
+							<!-- <img src="images/incident_detection.jpg" alt="" /> -->
+							<video autoplay muted loop>
+								<!-- <source src="https://pixabay.com/videos/download/video-32052_medium.mp4", type="video/mp4"> -->
+								<!-- <source src="https://pixabay.com/videos/download/video-141056_source.mp4", type="video/mp4"> -->
+								<source src="videos/Container - 141056.mp4", type="video/mp4">
+								
+							</video>
+						</div>
+					</section>
+
+					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in onscroll-content-fade-up">
 						<div class="content">
 							<h2>Optimizating Neural Networks for Large-scale Inference</h2>
 							<p>
@@ -250,7 +331,7 @@
 							<img src="images/nn_optimization.jpg" alt="" />
 						</div>
 					</section>
-
+					
 					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in onscroll-content-fade-up" id="first">
 						<div class="content">
 							<h2>Simulating a Social Network</h2>
