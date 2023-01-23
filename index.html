@@ -243,7 +243,7 @@
 									for the data provided by the suppliers. This
 									processing chain was based on :
 								</p>
-								<ul>
+								<ul class="less_bottom_padding">
 									<li>A data schema developed for the project (6 new tables were added to the database).</li>
 									<li>A Python library providing an abstraction layer to interact with the raw data.</li>
 									<li>
@@ -256,21 +256,9 @@
 									</li>
 								</ul>
 								<p>
-									For the predictive modeling aspect, we
-									created two datasets for training the models
-									and created hand-crafted features to extract
-									as much value as possible from the data. We
-									then selected the most relevant models based
-									on criteria of performance and
-									interpretability.
-								</p>
-								<p>
-									The pipeline was put into production by
-									exposing an API (FastAPI) to query the
-									predictive models, using an ORM (SQLAlchemy)
-									to interface with the database, and by
-									containerizing each of the workers using
-									Docker.
+									Additionally, we built robust, interpretable
+									predictive models with automatic monitoring
+									and retraining as new data comes in.
 								</p>
 								<p class="strong italic accent">
 									Tools and Libraries: Python | MySQL | Docker
