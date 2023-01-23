@@ -2653,7 +2653,7 @@ input, select, textarea {
 		position: relative;
 	}
 
-		.image img {
+	.image img, .image video {
 			display: block;
 			border-radius: 4px;
 		}
@@ -2663,7 +2663,8 @@ input, select, textarea {
 			max-width: 10rem;
 		}
 
-			.image.left img, .image.right img {
+			.image.left img, .image.right img,
+			.image.left video, .image.right video {
 				width: 100%;
 			}
 
@@ -2685,7 +2686,7 @@ input, select, textarea {
 			width: 100%;
 		}
 
-			.image.fit img {
+		.image.fit img, .image.fit video {
 				width: 100%;
 			}
 
@@ -2695,7 +2696,7 @@ input, select, textarea {
 			width: 100%;
 		}
 
-			.image.main img {
+		.image.main img, .image.main video {
 				width: 100%;
 			}
 
@@ -3443,14 +3444,16 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-	.banner.onscroll-image-fade-in .image img {
+	.banner.onscroll-image-fade-in .image img,
+	.banner.onscroll-image-fade-in .image video {
 		-moz-transition: opacity 0.75s ease-in-out;
 		-webkit-transition: opacity 0.75s ease-in-out;
 		-ms-transition: opacity 0.75s ease-in-out;
 		transition: opacity 0.75s ease-in-out;
 	}
 
-	.banner.onscroll-image-fade-in.is-inactive .image img {
+	.banner.onscroll-image-fade-in.is-inactive .image img,
+	.banner.onscroll-image-fade-in.is-inactive .image video {
 		opacity: 0;
 	}
 
@@ -3510,7 +3513,7 @@ input, select, textarea {
 			width: 50%;
 		}
 
-			.banner.style1 .image img {
+		.banner.style1 .image img, {
 				-moz-object-fit: cover;
 				-webkit-object-fit: cover;
 				-ms-object-fit: cover;
@@ -4845,14 +4848,16 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-	.spotlight.onscroll-image-fade-in .image img {
+	.spotlight.onscroll-image-fade-in .image img,
+	.spotlight.onscroll-image-fade-in .image video {
 		-moz-transition: opacity 0.75s ease-in-out;
 		-webkit-transition: opacity 0.75s ease-in-out;
 		-ms-transition: opacity 0.75s ease-in-out;
 		transition: opacity 0.75s ease-in-out;
 	}
 
-	.spotlight.onscroll-image-fade-in.is-inactive .image img {
+	.spotlight.onscroll-image-fade-in.is-inactive .image img,
+	.spotlight.onscroll-image-fade-in.is-inactive .image video {
 		opacity: 0;
 	}
 
@@ -4913,7 +4918,8 @@ input, select, textarea {
 			border-radius: 0;
 		}
 
-			.spotlight.style1 .image img {
+			.spotlight.style1 .image img,
+			.spotlight.style1 .image video {
 				-moz-object-fit: cover;
 				-webkit-object-fit: cover;
 				-ms-object-fit: cover;
