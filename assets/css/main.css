@@ -2718,6 +2718,12 @@ input, select, textarea {
 		margin: 0 0 2rem 0;
 		padding-left: 1rem;
 	}
+	
+	ul.less_bottom_padding {
+		list-style: disc;
+		margin: 0 0 1rem 0;
+		padding-left: 1rem;
+	}
 
 		ul li {
 			padding-left: 0.5rem;
