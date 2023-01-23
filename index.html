@@ -153,62 +153,71 @@
 						</div>
 					</section>
 				
-					<section id="first_project" class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in onscroll-content-fade-up">
+					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in onscroll-content-fade-up" id="first">
 						<div class="content">
-							<h2>Monitoring Tree Growth From Space</h2>
+							<h2>Tracking Technology Adoption Around the Globe</h2>
 							<p>
-								We built a prototype to <strong>remotely measure the growth of trees</strong> for a
-								forestry company based in Uruguay. Using freely-available Radar Satellite
-								images, we could go from measuring their size by hand once every few
-								years, to having an estimate <strong>every 6 days</strong>.
+								We created a <strong>real-time connected database (Knowledge
+								Graph)</strong> to track the adoption of technologies by top
+								companies. The information in this database was <strong>
+									extracted fully
+									automatically
+								</strong> from unstructured text data.
 							</p>								
 							<p>
-								This project was done in close partnership with a Computer Vision researcher from
-								the <a href="http://www.centreborelli.fr">Borelli Research Center</a>.
+								Turning raw text into a living network allowed an unprecedented
+								level of <strong>big-picture analysis</strong> on the technology
+								landscape.
 							</p>
 							<p class="strong italic accent">
-								Remote Sensing | Computer Vision | Time Series
+								Knowledge Graphs | Information Extraction | Deep Syntax Analysis
 							</p>
 							<ul class="actions learn_more_wrapper">
 								<a class="button learn_more">Technical Details</a>
-								<a
-									href="https://github.com/Nathravorn/monitoring-tree-growth-from-space"
-									class="icon brands style2 fa-github"
-									style="margin: 0.5em 1em;"
-								></a>
 							</ul>
 							<div class="hidden_text">
 								<p>
-									The main technical challenge was that, past a certain age, trees
-									become too dense for their volume to be accurately measured
-									using radar signals <i>(a problem known as backscatter saturation)</i>.
-									Our goal was to <strong>
-										quantify at what age this saturation would be
-										reached
-									</strong> depending on the radar frequency used <i>
-										(C-band or
-										L-band)
-									</i>.
+									The aim of the project was to extract relationships between
+									companies and technologies based on transcripts of Earnings Calls.
+									The three major technical
+									challenges were the <strong>high level of noise</strong>
+									(the large majority of
+									technology mentions in the data are meaningless), the <strong>
+										lack of
+										labeled data
+									</strong> and a requirement of <strong>
+										interpretability and
+										robustness.
+									</strong>
 								</p>
 								<p>
-									By combining <strong>ground-truth measurements</strong> provided by the company,
-									<strong>Sentinel-1 satellite images</strong>, <strong>daily weather data</strong> for the area,
-									and the scientific literature on <strong>tree biology</strong>, we
-									developed a method comprising a normalization scheme and a
-									three-scale analysis to assess the presence of backscatter
-									saturation at various tree ages, and provided estimates for the
-									saturation age : <strong>2.5 years for the C band, 6.2 for the L band.</strong>
+									The solution we found was to use an <strong>OpenIE</strong> model based on
+									<strong>dependency parsing</strong> to extract assertions and
+									only keep those which expressed an explicit relationship between
+									the company and the technology.
+									Each assertion became an edge between two nodes in the Knowledge Graph.
+								</p>
+								<p>
+									Then, a classification model
+									(based on the <strong>
+										TARS model</strong>, trained using <strong>transfer learning with
+										weak supervision</strong>)
+									classified each edge, thus allowing for various types of edges between
+									the nodes.
 								</p>
 								<p class="strong italic accent">
-									Tools and Libraries: Rasterio | GDAL | Scikit-learn
+									Tools and Libraries: Flair | Spacy | Vis.js
 								</p>
 							</div>
 						</div>
-						<div class="image">
-							<img src="images/gif/cropped.gif" alt="" />
+						<div class="image" style="background-color: white;">
+							<!-- <img src="images/kg.jpg" alt="" /> -->
+							<video autoplay muted loop>
+								<source src="videos/Network - 45961.mp4">
+							</video>
 						</div>
 					</section>
-					
+									
 					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in onscroll-content-fade-up">
 						<div class="content">
 							<h2>Detecting and Predicting Logistics Incidents</h2>
@@ -319,8 +328,64 @@
 							<img src="images/nn_optimization.gif" alt="" />
 						</div>
 					</section>
-					
-					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in onscroll-content-fade-up" id="first">
+
+					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in onscroll-content-fade-up">
+						<div class="content">
+							<h2>Monitoring Tree Growth From Space</h2>
+							<p>
+								We built a prototype to <strong>remotely measure the growth of trees</strong> for a
+								forestry company based in Uruguay. Using freely-available Radar Satellite
+								images, we could go from measuring their size by hand once every few
+								years, to having an estimate <strong>every 6 days</strong>.
+							</p>								
+							<p>
+								This project was done in close partnership with a Computer Vision researcher from
+								the <a href="http://www.centreborelli.fr">Borelli Research Center</a>.
+							</p>
+							<p class="strong italic accent">
+								Remote Sensing | Computer Vision | Time Series
+							</p>
+							<ul class="actions learn_more_wrapper">
+								<a class="button learn_more">Technical Details</a>
+								<a
+									href="https://github.com/Nathravorn/monitoring-tree-growth-from-space"
+									class="icon brands style2 fa-github"
+									style="margin: 0.5em 1em;"
+								></a>
+							</ul>
+							<div class="hidden_text">
+								<p>
+									The main technical challenge was that, past a certain age, trees
+									become too dense for their volume to be accurately measured
+									using radar signals <i>(a problem known as backscatter saturation)</i>.
+									Our goal was to <strong>
+										quantify at what age this saturation would be
+										reached
+									</strong> depending on the radar frequency used <i>
+										(C-band or
+										L-band)
+									</i>.
+								</p>
+								<p>
+									By combining <strong>ground-truth measurements</strong> provided by the company,
+									<strong>Sentinel-1 satellite images</strong>, <strong>daily weather data</strong> for the area,
+									and the scientific literature on <strong>tree biology</strong>, we
+									developed a method comprising a normalization scheme and a
+									three-scale analysis to assess the presence of backscatter
+									saturation at various tree ages, and provided estimates for the
+									saturation age : <strong>2.5 years for the C band, 6.2 for the L band.</strong>
+								</p>
+								<p class="strong italic accent">
+									Tools and Libraries: Rasterio | GDAL | Scikit-learn
+								</p>
+							</div>
+						</div>
+						<div class="image">
+							<img src="images/gif/cropped.gif" alt="" />
+						</div>
+					</section>
+
+					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in onscroll-content-fade-up" id="first">
 						<div class="content">
 							<h2>Simulating a Social Network</h2>
 							<p>
@@ -373,107 +438,12 @@
 							</div>
 						</div>
 						<div class="image" style="background-color: white;">
-							<img src="images/social_network.png" alt="" />
+							<!-- <img src="images/social_network.png" alt="" /> -->
+							<video autoplay muted loop>
+								<source src="videos/production ID_5075219.mp4">
+							</video>
 						</div>
 					</section>
-
-					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in onscroll-content-fade-up" id="first">
-						<div class="content">
-							<h2>Tracking Technology Adoption Around the Globe</h2>
-							<p>
-								We created a <strong>real-time connected database (Knowledge
-								Graph)</strong> to track the adoption of technologies by top
-								companies. The information in this database was <strong>
-									extracted fully
-									automatically
-								</strong> from unstructured text data.
-							</p>								
-							<p>
-								Turning raw text into a living network allowed an unprecedented
-								level of <strong>big-picture analysis</strong> on the technology
-								landscape.
-							</p>
-							<p class="strong italic accent">
-								Knowledge Graphs | Information Extraction | Deep Syntax Analysis
-							</p>
-							<ul class="actions learn_more_wrapper">
-								<a class="button learn_more">Technical Details</a>
-							</ul>
-							<div class="hidden_text">
-								<p>
-									The aim of the project was to extract relationships between
-									companies and technologies based on transcripts of what
-									executives said in Earnings Calls. The three major technical
-									challenges were the <strong>high level of noise</strong> (the large majority of
-									technology mentions in the data are meaningless), the <strong>
-										lack of
-										labeled data
-									</strong> and a requirement of <strong>
-										interpretability and
-										robustness
-									</strong>.
-								</p>
-								<p>
-									The solution we found was to use an <strong>OpenIE</strong> model based on
-									<strong>dependency parsing</strong> to extract assertions and
-									only keep those which expressed an explicit relationship between
-									the company and the technology. Then, a classification model
-									(based on the <strong>
-										TARS model</strong>, trained using <strong>transfer learning with
-										weak supervision</strong>)
-									took those assertions and assigned them a
-									label to make the analysis easier.
-								</p>
-								<p class="strong italic accent">
-									Tools and Libraries: Flair | Spacy | Vis.js
-								</p>
-							</div>
-						</div>
-						<div class="image" style="background-color: white;">
-							<img src="images/kg.jpg" alt="" />
-						</div>
-					</section>
-
-				<!-- Two -->
-					<!-- <section
-						class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in onscroll-content-fade-up"
-						id="first_project"
-					>
-						<div class="content">
-							<h2>Tracking Technology Adoption in Real Time</h2>
-							<p>
-								I built a real-time connected database (Knowledge Graph) to track
-								the adoption of technologies by the world's top companies. The information in
-								this database was extracted fully automatically from unstructured
-								text data.
-							</p>								
-							<p>
-								Turning raw text into a living network allowed an
-								unprecedented level of big-picture analysis on the technology
-								landscape.
-							</p>
-							<ul class="actions stacked">
-								<li><a href="#" class="button">Learn More</a></li>
-							</ul>
-						</div>
-						<div class="image" style="background-color: white;">
-							<img src="images/network_gradient_transparent.png" alt="" />
-						</div>
-					</section> -->
-				
-				<!-- Four -->
-					<!-- <section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
-						<div class="content">
-							<h2>Pharetra etiam nulla</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum dolor sit amet.</p>
-							<ul class="actions stacked">
-								<li><a href="#" class="button">Learn More</a></li>
-							</ul>
-						</div>
-						<div class="image">
-							<img src="images/spotlight03.jpg" alt="" />
-						</div>
-					</section> -->
 
 					<section
 						id="curriculum_vitae"
