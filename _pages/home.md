@@ -27,10 +27,10 @@ latest_posts:
   limit: 10 # leave blank to include all the blog posts
 ---
 
-I'm a Data Scientist and Software Engineer based in Paris, France. I'm passionnate about math, Machine Learning, automation and optimization in all its forms. I enjoy modeling and solving real-world problems with mathematical and software tools.
+I'm a Data Scientist and Software Engineer based in Paris, France. I'm passionnate about math, Machine Learning, automation and optimization in all its forms. I enjoy modeling and solving real-world problems with mathematical and software tools with a specialization in NLP and LLMs.
 
-As a freelancer, I help clients define business needs and meet them using software and AI, with a strong focus on the reliability and resilience of systems. In the past few years, I've focused my efforts on making LLM-based applications reliable for real-life use in a bank by building evaluation pipelines for RAG and Virtual Assistant systems.
+As a freelancer, I help clients define business needs and meet them using software and AI, with a strong focus on the reliability and resilience of systems. In the past few years, I've focused my efforts on making LLM-based applications reliable for real-life use at BNP Paribas by building evaluation pipelines for RAG and Virtual Assistant systems.
 
-When I'm not at work, I play the piano for [improvised musical theatre](https://www.instagram.com/leschoeursbattants/) shows and organize a [music open-mic](https://www.instagram.com/lapommesceneouverte/) twice a month in Paris.
+When I'm not working, I play the piano for [improvised musical theatre](https://www.instagram.com/leschoeursbattants/) shows and organize a [music open-mic](https://www.instagram.com/lapommesceneouverte/) twice a month in Paris.
 
 <!-- I intend to use this blog to share some of my favorite math/coding problems I've worked on. -->
