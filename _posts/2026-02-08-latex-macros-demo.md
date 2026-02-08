@@ -104,6 +104,7 @@ macroName: ["LaTeX code with #1, #2, etc.", number_of_args]
 Example: `norm: ["\\left\\lVert #1 \\right\\rVert", 1]` creates a `\norm{x}` macro where `#1` is replaced by the argument.
 
 For multiple arguments:
+
 ```yaml
 inner: ["\\left\\langle #1, #2 \\right\\rangle", 2]
 ```
