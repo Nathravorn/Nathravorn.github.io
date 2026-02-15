@@ -206,3 +206,21 @@
     crossorigin="anonymous"
   >
 {% endif %}
+
+{% if page.mathjax_macros %}
+  <!-- MathJax macros for this page -->
+  <script>
+    window.MathJax = window.MathJax || {};
+    window.MathJax.tex = window.MathJax.tex || {};
+    window.MathJax.tex.macros = window.MathJax.tex.macros || {};
+    Object.assign(window.MathJax.tex.macros, {
+      {% for macro in page.mathjax_macros %}
+        {% if macro[1][0] %}
+          {{ macro[0] }}: [{{ macro[1][0] | jsonify }}, {{ macro[1][1] }}]{% unless forloop.last %},{% endunless %}
+        {% else %}
+          {{ macro[0] }}: {{ macro[1] | jsonify }}{% unless forloop.last %},{% endunless %}
+        {% endif %}
+      {% endfor %}
+    });
+  </script>
+{% endif %}

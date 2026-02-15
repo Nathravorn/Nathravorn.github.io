@@ -30,6 +30,7 @@ Here we will give you some tips on how to customize the website. One important t
     - [Configuring external service URLs](#configuring-external-service-urls)
   - [Creating new pages](#creating-new-pages)
   - [Creating new blog posts](#creating-new-blog-posts)
+    - [Using LaTeX macros in blog posts](#using-latex-macros-in-blog-posts)
   - [Creating new projects](#creating-new-projects)
   - [Adding some news](#adding-some-news)
   - [Adding Collections](#adding-collections)
@@ -62,7 +63,7 @@ Here we will give you some tips on how to customize the website. One important t
     - [How it works](#how-it-works)
     - [Configuration](#configuration-1)
     - [Disable related posts for a specific post](#disable-related-posts-for-a-specific-post)
-    - [Additional configuration in _config.yml](#additional-configuration-in-_configyml)
+    - [Additional configuration in \_config.yml](#additional-configuration-in-_configyml)
   - [Managing publication display](#managing-publication-display)
   - [Adding a Google Calendar](#adding-a-google-calendar)
     - [Basic usage](#basic-usage)
@@ -418,6 +419,83 @@ To create a new blog post, you can add a new Markdown file in the [\_posts](_pos
 If you want to create blog posts that are not ready to be published, but you want to track it with git, you can create a [\_drafts](https://jekyllrb.com/docs/posts/#drafts) directory and store them there.
 
 Note that `posts` is also a collection, but it is a default collection created automatically by Jekyll. To access the posts, you can use the `site.posts` variable in your templates.
+
+### Using LaTeX macros in blog posts
+
+If you're writing blog posts with mathematical content, you can define custom LaTeX macros (shortcuts) that will be available throughout the entire post. This is particularly useful for commonly used notation like `\R` for `\mathbb{R}` or custom operators.
+
+#### Defining macros in frontmatter
+
+Add a `mathjax_macros` section to your blog post's frontmatter:
+
+```yaml
+---
+layout: post
+title: My Math Post
+date: 2024-01-15
+mathjax_macros:
+  R: "\\mathbb{R}"
+  N: "\\mathbb{N}"
+  C: "\\mathbb{C}"
+  norm: ["\\left\\lVert #1 \\right\\rVert", 1]
+  inner: ["\\left\\langle #1, #2 \\right\\rangle", 2]
+---
+```
+
+**Important notes:**
+
+- You must escape backslashes in YAML, so use `\\` instead of `\`
+- For simple macros (no arguments), use the format: `macroName: "LaTeX code"`
+- For macros with arguments, use the format: `macroName: ["LaTeX code with #1, #2, etc.", number_of_args]`
+
+#### Simple macros
+
+Simple macros are text replacements without arguments:
+
+```yaml
+mathjax_macros:
+  R: "\\mathbb{R}"
+  eps: "\\varepsilon"
+  la: "\\langle"
+  ra: "\\rangle"
+```
+
+Then in your post, you can write:
+
+```markdown
+Let $f: \R \to \R$ be a function such that for all $\eps > 0$...
+```
+
+#### Macros with arguments
+
+For macros that take arguments, specify the number of arguments as the second element of an array:
+
+```yaml
+mathjax_macros:
+  norm: ["\\left\\lVert #1 \\right\\rVert", 1]
+  abs: ["\\left| #1 \\right|", 1]
+  inner: ["\\left\\langle #1, #2 \\right\\rangle", 2]
+  Set: ["{#1, \\ldots, #2}", 2]
+```
+
+Then use them in your post:
+
+```markdown
+The Cauchy-Schwarz inequality states that $\abs{\inner{x}{y}} \leq \norm{x} \cdot \norm{y}$.
+
+Consider the set $\Set{x_1}{x_n}$ where each $x_i \in \R$.
+```
+
+#### Example
+
+See the [demo blog post](_posts/2026-02-08-latex-macros-demo.md) for a complete working example with various macro types.
+
+**Benefits of using macros:**
+
+- **Consistency**: Ensures uniform notation throughout your post
+- **Readability**: Makes your LaTeX source much easier to read and write
+- **Maintainability**: Change notation by updating a single macro definition
+- **Efficiency**: Less typing for frequently used expressions
 
 ## Creating new projects
 
