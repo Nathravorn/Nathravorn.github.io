@@ -9,7 +9,25 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{
+  },{id: "nav-blog",
+          title: "Blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "post-vwt-the-inspection-paradox-as-a-probability-transform",
+        
+          title: "VWT: The Inspection Paradox as a Probability Transform",
+        
+        description: "Formalizing a statistical paradox as a probability transform and deriving its properties",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/vwt/";
+          
+        },
+      },{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
