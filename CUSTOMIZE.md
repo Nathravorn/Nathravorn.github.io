@@ -30,6 +30,11 @@ Here we will give you some tips on how to customize the website. One important t
     - [Configuring external service URLs](#configuring-external-service-urls)
   - [Creating new pages](#creating-new-pages)
   - [Creating new blog posts](#creating-new-blog-posts)
+    - [Linking between blog posts](#linking-between-blog-posts)
+      - [Using `post_url` for blog posts](#using-post_url-for-blog-posts)
+      - [Using `link` for any page or file](#using-link-for-any-page-or-file)
+      - [Which tag should you use?](#which-tag-should-you-use)
+      - [Example in a real blog post](#example-in-a-real-blog-post)
     - [Using LaTeX macros in blog posts](#using-latex-macros-in-blog-posts)
       - [Defining macros in frontmatter](#defining-macros-in-frontmatter)
       - [Simple macros](#simple-macros)
@@ -67,7 +72,7 @@ Here we will give you some tips on how to customize the website. One important t
     - [How it works](#how-it-works)
     - [Configuration](#configuration-1)
     - [Disable related posts for a specific post](#disable-related-posts-for-a-specific-post)
-    - [Additional configuration in _config.yml](#additional-configuration-in-_configyml)
+    - [Additional configuration in \_config.yml](#additional-configuration-in-_configyml)
   - [Managing publication display](#managing-publication-display)
   - [Adding a Google Calendar](#adding-a-google-calendar)
     - [Basic usage](#basic-usage)
@@ -423,6 +428,81 @@ To create a new blog post, you can add a new Markdown file in the [\_posts](_pos
 If you want to create blog posts that are not ready to be published, but you want to track it with git, you can create a [\_drafts](https://jekyllrb.com/docs/posts/#drafts) directory and store them there.
 
 Note that `posts` is also a collection, but it is a default collection created automatically by Jekyll. To access the posts, you can use the `site.posts` variable in your templates.
+
+### Linking between blog posts
+
+When writing blog posts, you often want to reference other posts without hardcoding URLs. Jekyll provides special tags that automatically generate the correct URL for you, ensuring your links won't break even if you change your permalink structure.
+
+#### Using `post_url` for blog posts
+
+The `post_url` tag is specifically designed for linking to blog posts. It takes the filename (without the `.md` extension) and generates the correct URL:
+
+```markdown
+Check out my [previous post]({% post_url 2024-01-15-my-previous-post %}) for more details.
+```
+
+**Key features:**
+
+- **No file extension needed** – Use the filename without `.md`
+- **Build-time validation** – Jekyll will fail to build if the post doesn't exist, helping you catch broken links early
+- **Automatic URL generation** – Works regardless of your permalink configuration
+- **Works with subdirectories** – If your posts are in subdirectories, include the path: `{% post_url subdirectory/2024-01-15-post-name %}`
+
+**Example:**
+
+```markdown
+In my [introduction to machine learning]({% post_url 2023-06-15-ml-intro %}), I covered the basics.
+Now let's dive deeper into neural networks.
+```
+
+#### Using `link` for any page or file
+
+The `link` tag is more general and works for any file in your Jekyll site, not just blog posts:
+
+```markdown
+Read more on my [About page]({% link _pages/about.md %}).
+
+Check out this [project]({% link _projects/quantum-computing.md %}).
+
+Download the [PDF]({% link assets/pdf/research-paper.pdf %}).
+```
+
+**Key features:**
+
+- **Full path required** – Include the complete path relative to your site root
+- **File extension required** – Unlike `post_url`, you must include the file extension
+- **Build-time validation** – Like `post_url`, Jekyll validates the link exists
+- **Works with any file** – Can link to pages, projects, PDFs, images, etc.
+
+#### Which tag should you use?
+
+- **For blog posts:** Use `{% post_url YYYY-MM-DD-title %}` (simpler syntax, no extension needed)
+- **For other pages or files:** Use `{% link path/to/file.md %}` (more general purpose)
+
+#### Example in a real blog post
+
+Here's a practical example from a bibliography post:
+
+```markdown
+---
+layout: post
+title: Advanced Bibliography Tips
+date: 2024-02-15
+---
+
+This post builds on my [previous post about citations]({% post_url 2024-01-10-citation-basics %}).
+
+For more general information, see my [publications page]({% link _pages/publications.md %}).
+
+You can also download my [complete bibliography]({% link assets/bibliography/papers.bib %}).
+```
+
+**Important notes:**
+
+- Both tags work in Markdown files (posts, pages, projects, etc.)
+- Links are validated at build time, so you'll get an error if the target doesn't exist
+- If you rename or move a file, you'll need to update any `link` tags that point to it
+- The `post_url` tag is more resilient to changes since it only depends on the filename, not the location
 
 ### Using LaTeX macros in blog posts
 
