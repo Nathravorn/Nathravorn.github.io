@@ -20,9 +20,13 @@ You can easily reference other blog posts using Jekyll's `post_url` tag. For exa
 
 The syntax is simple:
 
+{% raw %}
+
 ```markdown
 [Link text]({% post_url YYYY-MM-DD-post-filename %})
 ```
+
+{% endraw %}
 
 **Key benefits:**
 
@@ -35,9 +39,13 @@ The syntax is simple:
 
 You can also link to other pages using the `link` tag:
 
+{% raw %}
+
 ```markdown
 [About me]({% link _pages/about.md %})
 ```
+
+{% endraw %}
 
 This works for:
 
@@ -49,9 +57,13 @@ This works for:
 
 You might be tempted to write something like:
 
+{% raw %}
+
 ```markdown
 [My post](/blog/2026/vwt/)
 ```
+
+{% endraw %}
 
 **Don't do this!** Here's why:
 
@@ -61,8 +73,13 @@ You might be tempted to write something like:
 
 ## Best Practices
 
+{% raw %}
+
 1. **For blog posts:** Use `{% post_url YYYY-MM-DD-filename %}` (no `.md` extension)
 2. **For other pages:** Use `{% link path/to/file.md %}` (include `.md` extension)
+
+{% endraw %}
+
 3. **Always test locally** before deploying to ensure all links work
 
 ## Summary
