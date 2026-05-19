@@ -16,7 +16,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-vwt-the-inspection-paradox-as-a-probability-transform",
+        },{id: "post-wtt-bus-waiting-times-as-a-probability-transform",
+        
+          title: "WTT: Bus waiting times as a probability transform",
+        
+        description: "Building on the Value-Weighted Transform to derive the link between interval lengths and waiting times",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/wtt/";
+          
+        },
+      },{id: "post-vwt-the-inspection-paradox-as-a-probability-transform",
         
           title: "VWT: The Inspection Paradox as a Probability Transform",
         
